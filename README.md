@@ -17,62 +17,23 @@ The flowchart above illustrates the main steps involved in the threaded calculat
 
 ## Class Diagram
 
-+------------------+              +-----------------+              +----------------------+
-|   Calculator     |              | ThreadedCalculator |              | ThreadedCalculatorGUI |
-+------------------+              +-----------------+              +----------------------+
-|                  |              |                 |              |                      |
-| - add(int, int)  |              | - number1: int  |              |                      |
-| - subtract(int,  |              | - number2: int  |              |                      |
-|   int)           |              | - operator:     |              |                      |
-| - multiply(int,  |              |                 |              |                      |
-|   int)           |              | - result: int   |              |                      |
-|                  |              |                 |              |                      |
-+------------------+              +-----------------+              +----------------------+
-|                  |              |                 |              |                      |
-|                  |              | + run(): void   |              |                      |
-|                  |              | + getResult():  |              |                      |
-|                  |              |   int           |              |                      |
-|                  |              |                 |              |                      |
-+------------------+              +-----------------+              +----------------------+
-       ^                                    |                                |
-       |                                    |                                |
-       |                                    |                                |
-       |                                    |                                |
-       |                                    v                                |
-       |                          +----------------+                          |
-       |                          |     Thread     |                          |
-       |                          +----------------+                          |
-       |                                    |                                |
-       |                                    |                                |
-       |                                    v                                |
-       |                          +----------------+                          |
-       |                          |   JFrame       |                          |
-       |                          +----------------+                          |
-       |                                    |                                |
-       +------------------------------------+--------------------------------+
 In the class diagram above, there are three classes:
+
+Main  : prompt the user for input values and the desired operation
 
 Calculator: Represents the calculator logic and contains methods for performing arithmetic calculations (add, subtract, and multiply).
 
 ThreadedCalculator: Extends Thread and represents a thread responsible for executing calculations. It has instance variables for number1, number2, operator, and result. The run() method performs the actual calculation, and the getResult() method returns the result.
 
-ThreadedCalculatorGUI: Extends JFrame and creates the GUI for the threaded calculator. It contains the main method and handles the user interface and interactions. It includes components like text fields and buttons for user input and result display.
+GUI: Extends JFrame and creates the GUI for the threaded calculator. It contains the main method and handles the user interface and interactions. It includes components like text fields and buttons for user input and result display.
 
-Please note that the class diagram is a simplified representation of the classes and their relationships in the threaded calculator project. It shows the basic structure and dependencies between the classes.
-
-
-
-
-
-
-
+![image](https://github.com/Taijasi-Kaveri/Multithreaded-Calculator/assets/52359546/9a32c467-6499-48ab-9dd0-4f54ed4fc917)
 
 The class diagram above shows the class structure of the threaded calculator project.
 
-- `Main ` : prompt the user for input values and the desired operation.
 - `Calculator`: Contains methods for performing arithmetic calculations.
 - `ThreadedCalculator`: Extends `Thread` and represents a thread responsible for executing calculations.
-- `ThreadedCalculatorGUI`: Extends `JFrame` and creates the GUI for the threaded calculator.
+- `GUI`: Extends `JFrame` and creates the GUI for the threaded calculator.
 
 ## Usage
 
